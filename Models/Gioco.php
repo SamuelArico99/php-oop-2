@@ -2,6 +2,6 @@
 
 require_once __DIR__ . '/Prodotto.php';
 
-class Gioco
+class Gioco extends Prodotto
 {
 }
