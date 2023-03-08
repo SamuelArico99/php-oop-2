@@ -2,6 +2,8 @@
 require_once __DIR__ . '/Models/Categoria.php';
 require_once __DIR__ . '/Models/Prodotto.php';
 require_once __DIR__ . '/Models/Cibo.php';
+require_once __DIR__ . '/Models/Cuccia.php';
+require_once __DIR__ . '/Models/Gioco.php';
 
 $categoriaCani = new Categoria(
     'Cani',
@@ -38,6 +40,51 @@ $prodotti[] = new Cibo(
     'htttp://google.com',
     $categoriaGatti,
     '07/05/2025'
+);
+
+$prodotti[] = new Cibo(
+    'Cibo 1',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur magni, ipsa, maiores iusto, molestias labore et aliquid deserunt eaque possimus cum alias maxime nobis tempora? Blanditiis accusamus dolore voluptas dicta!',
+    13.99,
+    'htttp://google.com',
+    $categoriaCani,
+    '07/05/2025'
+);
+
+$prodotti[] = new Cuccia(
+    'Cuccia 1',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur magni, ipsa, maiores iusto, molestias labore et aliquid deserunt eaque possimus cum alias maxime nobis tempora? Blanditiis accusamus dolore voluptas dicta!',
+    13.99,
+    'htttp://google.com',
+    $categoriaGatti,
+    'Microfibra'
+);
+
+$prodotti[] = new Cuccia(
+    'Cuccia 2',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur magni, ipsa, maiores iusto, molestias labore et aliquid deserunt eaque possimus cum alias maxime nobis tempora? Blanditiis accusamus dolore voluptas dicta!',
+    13.99,
+    'htttp://google.com',
+    $categoriaCani,
+    'Lana'
+);
+
+$prodotti[] = new Gioco(
+    'Gioco 1',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur magni, ipsa, maiores iusto, molestias labore et aliquid deserunt eaque possimus cum alias maxime nobis tempora? Blanditiis accusamus dolore voluptas dicta!',
+    15.99,
+    'htttp://google.com',
+    $categoriaCani,
+    'Plastica'
+);
+
+$prodotti[] = new Gioco(
+    'Gioco 1',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur magni, ipsa, maiores iusto, molestias labore et aliquid deserunt eaque possimus cum alias maxime nobis tempora? Blanditiis accusamus dolore voluptas dicta!',
+    15.99,
+    'htttp://google.com',
+    $categoriaGatti,
+    'Poliestere'
 );
 
 ?>
@@ -78,6 +125,22 @@ $prodotti[] = new Cibo(
 
                             ?>
                                 <span>Scadenza: <?php echo $prodotto->scadenza ?></span>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            if (is_a($prodotto, 'Cuccia')) {
+
+                            ?>
+                                <span>Materiale: <?php echo $prodotto->materiale ?></span>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            if (is_a($prodotto, 'Gioco')) {
+
+                            ?>
+                                <span>Materiale: <?php echo $prodotto->materiale ?></span>
                             <?php
                             }
                             ?>
