@@ -15,7 +15,11 @@ class Prodotto
     {
         $this->nome = $nome;
         $this->descrizione = $descrizione;
-        $this->prezzo = $prezzo;
+        if ($prezzo >= 0) {
+            $this->prezzo = $prezzo;
+        } else {
+            throw new Exception('Non è possibile inserire un prezzo negativo');
+        }
         $this->immagine = $immagine;
         $this->categoria = $categoria;
     }
